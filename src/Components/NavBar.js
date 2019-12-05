@@ -7,7 +7,7 @@ function NavBar() {
     <NavItem name={item.title} style={item.style} />
   ));
 
-  return <div className="nav-container">{navComponents}</div>;
+  return <nav className="nav-container">{navComponents}</nav>;
 }
 
 export default NavBar;
