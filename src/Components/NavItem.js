@@ -21,7 +21,7 @@ function NavItem(props) {
     <div
       className={"nav-item"}
       id={props.name}
-      style={hovered == false ? props.style : { backgroundColor: "grey" }}
+      style={hovered == false ? props.style : { opacity: "50" }}
       onClick={props.handleClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
