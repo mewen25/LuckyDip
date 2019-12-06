@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-
 import NavItemChild from "./NavItemChild";
+import { Link } from "react-router-dom";
 
 function NavItem(props) {
   const [hovered, setHovered] = useState(false);
@@ -8,7 +8,14 @@ function NavItem(props) {
   const handleSelected = () => {
     return (
       <NavItemChild>
-        {props.subtitles.map(item => <h3>{item.title}</h3>)}
+        {props.subtitles.map(item => (
+          <>
+            <hr />
+            <Link to={item.link} style={{ color: "white", fontSize: "20px" }}>
+              {item.title}
+            </Link>
+          </>
+        ))}
       </NavItemChild>
     );
   };

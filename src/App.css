@@ -42,8 +42,9 @@
   color: white;
 }
 
-.nav-subtitle > h3:hover {
+.nav-subtitle > a:hover {
   color: black;
+  font-size: 10px;
 }
 
 .dashboard {
