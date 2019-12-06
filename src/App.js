@@ -26,7 +26,7 @@ import ViewCustomer from "./Pages/People/ViewCustomer";
 import ViewSupplier from "./Pages/People/ViewSupplier";
 //Report
 import StockReport from "./Pages/Report/StockReport";
-import SalesReport from "./Pages/Report/SaleReport";
+import SaleReport from "./Pages/Report/SaleReport";
 import BuyReport from "./Pages/Report/BuyReport";
 
 const { app } = window.require("electron").remote;
@@ -38,6 +38,7 @@ class App extends Component {
         <Header />
         <NavBar />
         <Switch>
+          <Route path="/" exact component={Dashboard} />
           <Route path="/AcceptPO" exact component={AcceptPO} />
           <Route path="/ViewPO" exact component={ViewPO} />
           <Route path="/SalesOrder" exact component={SalesOrder} />
@@ -53,9 +54,8 @@ class App extends Component {
           <Route path="/ViewCustomer" exact component={ViewCustomer} />
           <Route path="/ViewSupplier" exact component={ViewSupplier} />
           <Route path="/StockReport" exact component={StockReport} />
-          <Route path="/SalesReport" exact component={SalesReport} />
+          <Route path="/SaleReport" exact component={SaleReport} />
           <Route path="/BuyReport" exact component={BuyReport} />
-          <Route path="/" component={Dashboard} />
         </Switch>
       </div>
     );

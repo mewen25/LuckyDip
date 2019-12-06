@@ -1,10 +1,11 @@
 import React from "react";
 import Searchbar from "./Searchbar";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <div className="header">
-      <h1>LuckyDip LTD</h1>
+      <Link to="/">LuckyDip LTD</Link>
       <Searchbar />
     </div>
   );

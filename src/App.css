@@ -30,6 +30,17 @@
   display: flex;
 }
 
+.header a {
+  color: white;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.header a:hover {
+  color: rgb(201, 199, 199);
+  cursor: pointer;
+}
+
 .nav-container {
   grid-area: n;
   padding-top: 15px;
@@ -42,9 +53,13 @@
   color: white;
 }
 
-.nav-subtitle > a:hover {
-  color: black;
+.nav-subtitle a:hover {
+  color: black !important;
   font-size: 10px;
+}
+
+.nav-item:hover {
+  background-color: grey !important;
 }
 
 .dashboard {
