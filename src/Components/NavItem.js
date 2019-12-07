@@ -9,12 +9,11 @@ function NavItem(props) {
     return (
       <NavItemChild>
         {props.subtitles.map(item => (
-          <>
-            <hr />
+          <div>
             <Link to={item.link} style={{ color: "white", fontSize: "20px" }}>
               {item.title}
             </Link>
-          </>
+          </div>
         ))}
       </NavItemChild>
     );
