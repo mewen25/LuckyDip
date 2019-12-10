@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import SearchInput, { createFilter } from "react-search-input";
 
-
+import "./searchBar.css";
 
 function Searchbar() {
+  const [value, setValue] = useState(null);
+
+  const handleChange = e => {
+    setValue(value);
+  };
+
   return (
     <div className="search">
-      <input placeholder="Search" type="text" />
+      <SearchInput
+        className="search-input"
+        onChange={handleChange}
+        value={value}
+      />
     </div>
   );
 }

@@ -1,30 +1,30 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.19.2/libexec/bin/yarn.js add @bit/semantic-org.semantic-ui-react.input
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @bit/segmentio.evergreen.search-input
 
 PATH: 
-  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\mewen\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\nodejs;C:\Program Files\Git\cmd;C:\Program Files\dotnet;C:\Program Files\PuTTY;C:\Program Files\Amazon\AWSCLI\bin;C:\Program Files (x86)\Yarn\bin;C:\Users\mewen\.cargo\bin;C:\Users\mewen\AppData\Local\Microsoft\WindowsApps;C:\Users\mewen\AppData\Local\Programs\Microsoft VS Code\bin;E:\Programming\processing-3.5.3;C:\Users\mewen\AppData\Roaming\npm;C:\Users\mewen\AppData\Local\atom\bin;C:\Program Files\heroku\bin;C:\Users\mewen\AppData\Local\GitHubDesktop\bin;C:\Users\mewen\AppData\Local\hyper\app-3.0.2\resources\bin;C:\Program Files\JetBrains\WebStorm 2019.2.2\bin;C:\Users\mewen\AppData\Local\Yarn\bin
 
 Yarn version: 
   1.19.2
 
 Node version: 
-  12.13.1
+  10.15.3
 
 Platform: 
-  darwin x64
+  win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@bit%2fsemantic-org.semantic-ui-react.input: Not found
-      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.19.2/libexec/lib/cli.js:66927:18)
-      at Request.self.callback (/usr/local/Cellar/yarn/1.19.2/libexec/lib/cli.js:140586:22)
-      at Request.emit (events.js:210:5)
-      at Request.<anonymous> (/usr/local/Cellar/yarn/1.19.2/libexec/lib/cli.js:141558:10)
-      at Request.emit (events.js:210:5)
-      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.19.2/libexec/lib/cli.js:141480:12)
-      at Object.onceWrapper (events.js:299:28)
-      at IncomingMessage.emit (events.js:215:7)
-      at endReadableNT (_stream_readable.js:1184:12)
-      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+  Error: https://registry.yarnpkg.com/@bit%2fsegmentio.evergreen.search-input: Not found
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66036:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140586:22)
+      at Request.emit (events.js:189:13)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141558:10)
+      at Request.emit (events.js:189:13)
+      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141480:12)
+      at Object.onceWrapper (events.js:277:13)
+      at IncomingMessage.emit (events.js:194:15)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
 
 npm manifest: 
   {

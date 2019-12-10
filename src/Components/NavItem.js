@@ -9,7 +9,15 @@ function NavItem(props) {
     return (
       <NavItemChild>
         {props.subtitles.map(item => (
-          <div>
+          <div
+            className="nav-selectable"
+            style={{
+              marginBottom: "5px",
+              backgroundColor: "#ff85d3",
+              width: "100%"
+            }}
+          >
+            <img src={require("../Data/Image/Add.svg")} />
             <Link to={item.link} style={{ color: "white", fontSize: "20px" }}>
               {item.title}
             </Link>
