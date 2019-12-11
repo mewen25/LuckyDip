@@ -29,6 +29,8 @@ import StockReport from "./Pages/Report/StockReport";
 import SaleReport from "./Pages/Report/SaleReport";
 import BuyReport from "./Pages/Report/BuyReport";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+
 const { app } = window.require("electron").remote;
 
 class App extends Component {

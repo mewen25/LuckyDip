@@ -39,6 +39,7 @@
 .header a:hover {
   color: rgb(201, 199, 199);
   cursor: pointer;
+  text-decoration: none;
 }
 
 .nav-container {

@@ -1,0 +1,60 @@
+.data-page {
+  margin: 15px;
+  width: 70vw;
+}
+
+.sales-header {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.completeOrder {
+  margin-left: 40%;
+  width: auto;
+}
+
+#data-title {
+  font-size: 30px;
+  margin: 20px 10px;
+}
+
+.form-container {
+  display: grid;
+  margin-top: 30px;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 15px;
+  row-gap: 15px;
+  width: 100%;
+}
+
+.inputField {
+  display: flex;
+  margin: 5px 15px;
+}
+
+.inputField p {
+  margin-right: 20px;
+}
+
+.inputField input {
+  height: 35px;
+  font-size: 16px;
+  padding-left: 10px;
+  border-radius: 5px;
+}
+
+.inputField input:focus {
+  outline: none;
+}
+
+.database-table {
+  margin-top: 50px;
+  margin-left: 2%;
+}
+
+.reviewInfo {
+  margin-top: 60px;
+}

@@ -6,12 +6,12 @@ export default [
       {
         title: "View Purchase Orders",
         page: "/Buying/ViewPO.js",
-        link: "/AcceptPO"
+        link: "/ViewPO"
       },
       {
         title: "Accept Purchase Orders",
         page: "/Buying/AcceptPO.js",
-        link: "/ViewPO"
+        link: "/AcceptPO"
       }
     ]
   },
