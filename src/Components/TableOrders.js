@@ -17,11 +17,13 @@ function TableOrders(props) {
   ));
 
   return (
-    <div className="database-table">
-      <Table striped bordered hover>
-        <thead>{tblHeads}</thead>
-        <tbody>{tblTds}</tbody>
-      </Table>
+    <div className="ordersDatabase">
+      <div className="database-table">
+        <Table striped bordered hover>
+          <thead>{tblHeads}</thead>
+          <tbody>{tblTds}</tbody>
+        </Table>
+      </div>
     </div>
   );
 }

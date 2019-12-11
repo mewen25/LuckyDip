@@ -1,0 +1,45 @@
+#order-title {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgb(139, 139, 139);
+  font-size: 50px;
+}
+
+.singleOrderContainer {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.order-info-table {
+  width: 80vw;
+  margin: 0 auto;
+  padding-top: 30px;
+  max-width: 90%;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.input-box {
+  margin-left: 20px !important;
+  border-left: 2px solid rgb(139, 139, 139);
+  height: 70px;
+  padding-left: 20px;
+}
+
+.addItemInputs {
+  margin-bottom: 20px;
+}
+
+.form-area h2 {
+  font-size: 20px;
+  padding-left: 30px;
+  text-decoration: underline;
+}

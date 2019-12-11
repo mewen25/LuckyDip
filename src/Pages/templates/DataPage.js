@@ -43,22 +43,6 @@ function DataPage(props) {
       </div>
       <hr />
       <div className="form-area">
-        <Formik
-          initialValues={{
-            orderNumber: props.data.orderNumber,
-            supplierReference: props.data.supplierReference,
-            supplierName: props.data.supplierName,
-            orderDate: props.data.orderDate,
-            deliveryDate: props.data.deliveryDate,
-            status: props.data.status,
-            total: props.data.total
-          }}
-          onSubmit={(data, { setSubmitting }) => {}}
-        >
-          {({ values, isSubmitting }) => (
-            <Form className="form-container">{inputComponents}</Form>
-          )}
-        </Formik>
         <hr />
         <div className="ordersDatabase">
           {props.data != null ? (
