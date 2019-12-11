@@ -1,3 +1,4 @@
+//Inputs for filling out an order
 export default [
   {
     id: 1,

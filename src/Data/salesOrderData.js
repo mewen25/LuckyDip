@@ -1,3 +1,4 @@
+//Inputs to be displayed on the View Sales order
 export default [
   {
     id: 1,

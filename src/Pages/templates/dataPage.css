@@ -30,6 +30,10 @@
   width: 100%;
 }
 
+.input-box {
+  margin: 10px !important;
+}
+
 .inputField {
   display: flex;
   margin: 5px 15px;

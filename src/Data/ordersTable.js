@@ -1,3 +1,4 @@
+//The actual orders (would be stored on MongoDB)
 export default [
   {
     id: 1,

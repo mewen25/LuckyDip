@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Formik, Field, Form } from "formik";
-//import { TextField, Button, Checkbox, Table } from "@material-ui/core";
+import { TextField } from "@material-ui/core";
 //import Button from "@material-ui/core/Button";
 import InputBox from "../../Components/InputBox";
 import { Table, Button } from "react-bootstrap";
@@ -10,19 +10,18 @@ import data from "../../Data/salesOrderData";
 import "./dataPage.css";
 
 function DataPage(props) {
-  const inputComponents = data.map(input => {
-    return (
-      <InputBox
-        value={props.data != null ? props.data[input.name] : null}
-        name={input.name}
-        type={input.type}
-        label={input.label}
-      />
-    );
-  });
-
-  if (props.data != null) {
-  }
+  console.log("YO", props);
+  const inputComponents = data.map(input => (
+    <Field
+      name={input.name}
+      variant="outlined"
+      label={input.label}
+      placeholder={input.name}
+      id="outlined-basic"
+      as={TextField}
+      className="input-box"
+    />
+  ));
 
   const heads = [
     "Order No.",
@@ -46,14 +45,13 @@ function DataPage(props) {
       <div className="form-area">
         <Formik
           initialValues={{
-            orderNumber: null,
-            supplierReference: "",
-            supplierInvoice: null,
-            suppplierCode: "",
-            supplierName: "",
-            currencyCode: "",
-            orderData: null,
-            deliveryDate: null
+            orderNumber: props.data.orderNumber,
+            supplierReference: props.data.supplierReference,
+            supplierName: props.data.supplierName,
+            orderData: props.data.orderDate,
+            deliveryDate: props.data.deliveryDate,
+            status: props.data.status,
+            total: props.data.total
           }}
           onSubmit={(data, { setSubmitting }) => {}}
         >

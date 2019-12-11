@@ -6,22 +6,7 @@ function TableOrders(props) {
   const tblHeads = props.heads.map(head => <th>{head}</th>);
   const tblTds = props.data.map(td => (
     <tr>
-      <Link
-        to={{
-          pathname: "/SalesOrder",
-          state: {
-            orderNumber: td.orderNumber,
-            orderDate: td.orderDate,
-            deliveryDate: td.deliveryDate,
-            supplierName: td.supplierName,
-            supplierReference: td.supplierReference,
-            status: td.status,
-            total: td.total
-          }
-        }}
-      >
-        {td.orderNumber}
-      </Link>
+      <Link to={`/SalesOrder/${td.orderNumber}`}>{td.orderNumber}</Link>
       <td>{td.orderDate}</td>
       <td>{td.deliveryDate}</td>
       <td>{td.supplierName}</td>

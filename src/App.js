@@ -10,6 +10,7 @@ import AcceptPO from "./Pages/Buying/AcceptPO";
 import ViewPO from "./Pages/Buying/ViewPO";
 //Selling
 import SalesOrder from "./Pages/Selling/SalesOrder";
+import SalesOrderDetail from "./Pages/Selling/SalesOrderDetail";
 import Quotes from "./Pages/Selling/Quotes";
 import Shipping from "./Pages/Selling/Shipping";
 import Invoices from "./Pages/Selling/Invoices";
@@ -44,6 +45,10 @@ class App extends Component {
           <Route path="/AcceptPO" exact component={AcceptPO} />
           <Route path="/ViewPO" exact component={ViewPO} />
           <Route path="/SalesOrder" exact component={SalesOrder} />
+          <Route
+            path="/SalesOrder/:orderPageNumber"
+            component={SalesOrderDetail}
+          />
           <Route path="/Quotes" exact component={Quotes} />
           <Route path="/Shipping" exact component={Shipping} />
           <Route path="/Invoices" exact component={Invoices} />
