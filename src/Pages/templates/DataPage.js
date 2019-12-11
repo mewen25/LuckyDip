@@ -48,7 +48,7 @@ function DataPage(props) {
             orderNumber: props.data.orderNumber,
             supplierReference: props.data.supplierReference,
             supplierName: props.data.supplierName,
-            orderData: props.data.orderDate,
+            orderDate: props.data.orderDate,
             deliveryDate: props.data.deliveryDate,
             status: props.data.status,
             total: props.data.total
