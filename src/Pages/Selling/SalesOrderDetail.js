@@ -1,19 +1,27 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { TextField } from "@material-ui/core";
-import { Field } from "formik";
+import { TextField, Autocomplete } from "@material-ui/core";
+import { Field, useField } from "formik";
 import CreateForm from "../../Components/CreateForm";
 import CreateTable from "../../Components/CreateTable";
 
 //import inputData from "../../Data/salesOrderData";
 import ordersData from "../../Data/ordersTable";
 import inputData from "../../Data/singleOrderInputData";
+import itemsData from "../../Data/itemsList";
 
 function SalesOrderDetail(props) {
   const { orderPageNumber } = useParams();
   const foundOrder = ordersData.find(
     order => order.orderNumber === orderPageNumber
   );
+
+  // const comboBox = ({label, ...props}) => {
+  //   const [field, meta] = useField(props)
+  //   return (
+  //     <Autocomplete {...field} id="combo-box" options= />
+  //   )
+  // }
 
   const supplierInputs = inputData[0].section.map(input => (
     <Field
@@ -25,7 +33,7 @@ function SalesOrderDetail(props) {
       placeholder={input.label}
       id="outlined-basic"
       className="input-box"
-      as={TextField}
+      as={input.component}
     />
   ));
 
@@ -39,7 +47,7 @@ function SalesOrderDetail(props) {
       placeholder={input.label}
       id="outlined-basic"
       className="input-box"
-      as={TextField}
+      as={input.component}
     />
   ));
 
@@ -53,27 +61,28 @@ function SalesOrderDetail(props) {
       placeholder={input.label}
       id="outlined-basic"
       className="input-box"
-      as={TextField}
+      as={input.component}
     />
   ));
 
   const supplierStateValues = inputData[0].section.map(value => ({
-    name: value.name
+    [value.name]: foundOrder[value.name]
   }));
 
   const deliveryStateValues = inputData[1].section.map(value => ({
-    name: value.name
+    [value.name]: foundOrder[value.name]
   }));
 
   const orderStateValues = inputData[2].section.map(value => ({
-    name: value.name
+    [value.name]: foundOrder[value.name]
   }));
 
-  const stateValues = [
-    supplierStateValues,
-    deliveryStateValues,
-    orderStateValues
-  ];
+  const stateValues = {
+    ...supplierStateValues,
+    ...deliveryStateValues,
+    ...orderStateValues
+  };
+
   const inputs = [
     <div className="supplier-info">
       <h2>Supplier Info</h2>
@@ -108,6 +117,7 @@ function SalesOrderDetail(props) {
         stateValues={stateValues}
         inputs={inputs}
         containerClass="singleOrderContainer"
+        refData={[foundOrder]}
       />
       <CreateTable heads={heads} data={[foundOrder]} actions />
     </div>

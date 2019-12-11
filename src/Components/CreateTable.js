@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { TextField } from "@material-ui/core";
 import { Field } from "formik";
 import CreateForm from "./CreateForm";
+import AddNewItem from "./AddNewItem";
 
 import inputData from "../Data/addItemInputData";
 import "./purchaseOrder.css";
@@ -41,13 +42,7 @@ function CreateTable(props) {
 
   return (
     <div className="order-info-table">
-      {props.actions ? (
-        <CreateForm
-          stateValues={stateValues}
-          inputs={actionInputs}
-          containerClass="addItemInputs"
-        />
-      ) : null}
+      {props.actions ? <AddNewItem /> : null}
       <Table striped bordered hover>
         <thead>{tblHeads}</thead>
         <tbody>{tblTds}</tbody>
