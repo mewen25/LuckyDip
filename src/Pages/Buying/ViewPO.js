@@ -2,6 +2,7 @@ import React from "react";
 import InputBox from "../../Components/InputBox";
 import { Formik, Field, Form } from "formik";
 import TableOrders from "../../Components/TableOrders";
+import { TextField } from "@material-ui/core";
 
 import inputData from "../../Data/purchaseOrderData";
 import data from "../../Data/ordersTable";
@@ -9,12 +10,14 @@ import "./viewPO.css";
 
 function ViewPO() {
   const inputComponents = inputData.map(input => (
-    <InputBox
-      key={input.id}
-      label={input.label}
+    <Field
       name={input.name}
-      type={input.type}
-      id={input.id}
+      variant="outlined"
+      label={input.label}
+      placeholder={input.name}
+      id="outlined-basic"
+      as={TextField}
+      className="input-box"
     />
   ));
 
