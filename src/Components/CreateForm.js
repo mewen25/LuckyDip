@@ -18,7 +18,10 @@ function CreateForm(props) {
         onSubmit={(data, { setSubmitting }) => {}}
       >
         {({ values, isSubmitting }) => (
-          <Form className={props.containerClass}>{props.inputs}</Form>
+          <Form className={props.containerClass}>
+            {props.inputs}
+            {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
+          </Form>
         )}
       </Formik>
     </div>

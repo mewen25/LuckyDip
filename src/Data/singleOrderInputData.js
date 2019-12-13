@@ -1,3 +1,5 @@
+import TextField from "@material-ui/core/TextField";
+
 export default [
   {
     id: 1,
@@ -8,19 +10,22 @@ export default [
         id: 1,
         name: "supplierName",
         type: "text",
-        label: "Supplier Name"
+        label: "Supplier Name",
+        component: TextField
       },
       {
         id: 2,
         name: "supplierRef",
         type: "text",
-        label: "Supplier Ref."
+        label: "Supplier Ref.",
+        component: TextField
       },
       {
         id: 3,
         name: "discount",
         type: "number",
-        label: "Discount %"
+        label: "Discount %",
+        component: TextField
       }
     ]
   },
@@ -33,31 +38,36 @@ export default [
         id: 1,
         name: "companyName",
         type: "text",
-        label: "Company Name"
+        label: "Company Name",
+        component: TextField
       },
       {
         id: 2,
         name: "addressLn1",
         type: "text",
-        label: "Address Line 1"
+        label: "Address Line 1",
+        component: TextField
       },
       {
         id: 3,
         name: "addressLn2",
         type: "text",
-        label: "Address Line 2"
+        label: "Address Line 2",
+        component: TextField
       },
       {
         id: 4,
         name: "city",
         type: "text",
-        label: "Town/City"
+        label: "Town/City",
+        component: TextField
       },
       {
         id: 5,
-        name: "postCode",
+        name: "postcode",
         type: "text",
-        label: "Post Code"
+        label: "Post Code",
+        component: TextField
       }
     ]
   },
@@ -70,25 +80,29 @@ export default [
         id: 1,
         name: "orderDate",
         type: "text",
-        label: "Order Date"
+        label: "Order Date",
+        component: TextField
       },
       {
         id: 2,
         name: "requiredDate",
         type: "text",
-        label: "Required Date"
+        label: "Required Date",
+        component: TextField
       },
       {
         id: 3,
         name: "expectedDate",
         type: "text",
-        label: "Expected Date"
+        label: "Expected Date",
+        component: TextField
       },
       {
         id: 4,
         name: "createdBy",
         type: "text",
-        label: "Created By:"
+        label: "Created By:",
+        component: TextField
       }
     ]
   }
