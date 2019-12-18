@@ -16,13 +16,13 @@ export default [
     id: 3,
     label: "Order Date Range",
     name: ["dateRangeStart", "dateRangeEnd"],
-    type: "calendar"
+    type: "date"
   },
   {
     id: 4,
     label: "Status",
     name: "purchaseStatus",
-    type: "dropdown",
+    type: "select",
     style: { borderRight: "2px solid black" }
   }
 ];

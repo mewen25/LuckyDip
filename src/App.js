@@ -37,7 +37,7 @@ const { app } = window.require("electron").remote;
 class App extends Component {
   render() {
     return (
-      <div className="app">
+      <div className="app noselect">
         <Header />
         <NavBar />
         <Switch>

@@ -7,7 +7,7 @@ import CreateForm from "./CreateForm";
 import AddNewItem from "./AddNewItem";
 
 import inputData from "../Data/addItemInputData";
-import "./purchaseOrder.css";
+//import "./purchaseOrder.css";
 
 function CreateTable(props) {
   const tblHeads = props.heads.map(head => <th>{head}</th>);
@@ -41,13 +41,10 @@ function CreateTable(props) {
   }));
 
   return (
-    <div className="order-info-table">
-      {props.actions ? <AddNewItem /> : null}
-      <Table striped bordered hover>
-        <thead>{tblHeads}</thead>
-        <tbody>{tblTds}</tbody>
-      </Table>
-    </div>
+    <Table striped bordered hover>
+      <thead>{tblHeads}</thead>
+      <tbody>{tblTds}</tbody>
+    </Table>
   );
 }
 

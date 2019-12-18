@@ -17,7 +17,9 @@ function NavItem(props) {
               width: "100%"
             }}
           >
-            <img src={require("../Data/Image/Add.svg")} />
+            {item.plus == true ? (
+              <img src={require("../Data/Image/Add.svg")} />
+            ) : null}
             <Link to={item.link} style={{ color: "white", fontSize: "20px" }}>
               {item.title}
             </Link>

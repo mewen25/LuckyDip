@@ -10,21 +10,20 @@ function CreateForm(props) {
   //     <Field name={field.name} label={field.label} as={TextField} />
   //   )
   // })
+  console.log("CHILDREN", props.children, "INPUTS", props);
 
   return (
-    <div className="form-area">
-      <Formik
-        initialValues={props.stateValues}
-        onSubmit={(data, { setSubmitting }) => {}}
-      >
-        {({ values, isSubmitting }) => (
-          <Form className={props.containerClass}>
-            {props.inputs}
-            {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
-          </Form>
-        )}
-      </Formik>
-    </div>
+    <Formik
+      initialValues={props.stateValues}
+      onSubmit={(data, { setSubmitting }) => {}}
+    >
+      {({ values, isSubmitting }) => (
+        <Form className={props.containerClass}>
+          {/* {props.inputs} */ props.children}
+          {/* <pre>{JSON.stringify(values, null, 2)}</pre> */}
+        </Form>
+      )}
+    </Formik>
   );
 }
 

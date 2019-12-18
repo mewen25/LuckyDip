@@ -1,9 +1,14 @@
 import React from "react";
+import DataLayout from "../templates/DataLayout";
 
 function ViewBOM() {
   return (
     <div>
-      <h1>ViewBOM</h1>
+      <DataLayout>
+        <div className="templateHeader">
+          <h1>ViewBOM</h1>
+        </div>
+      </DataLayout>
     </div>
   );
 }

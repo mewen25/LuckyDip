@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-//import { TextField, Autocomplete } from "@material-ui/core";
+import { TextField } from "@material-ui/core";
 import { Field, useField } from "formik";
 import CreateForm from "../../Components/CreateForm";
 import CreateTable from "../../Components/CreateTable";
+import DataLayout from "../templates/DataLayout";
+import DateInput from "../../Components/DateInput";
 
 //import inputData from "../../Data/salesOrderData";
 import ordersData from "../../Data/ordersTable";
 import inputData from "../../Data/singleOrderInputData";
 import itemsData from "../../Data/itemsList";
+import AddNewItem from "../../Components/AddNewItem";
+import addItemOptionsData from "../../Data/itemsList";
 
 function SalesOrderDetail(props) {
   const { orderPageNumber } = useParams();
@@ -25,50 +29,38 @@ function SalesOrderDetail(props) {
 
   const handleFocus = event => event.target.select();
 
-  const supplierInputs = inputData[0].section.map(input => (
-    <Field
-      key={input.id}
-      name={input.name}
-      type={input.type}
-      variant="outlined"
-      label={input.label}
-      placeholder={input.label}
-      id="outlined-basic"
-      className="input-box"
-      onFocus={handleFocus}
-      as={input.component}
-    />
-  ));
+  const createInput = input => {
+    if (input.type == "text" || input.type == "number") {
+      return (
+        <Field
+          key={input.id}
+          name={input.name}
+          type={input.type}
+          variant="outlined"
+          label={input.label}
+          placeholder={input.label}
+          id="outlined-basic"
+          className="input-box"
+          onFocus={handleFocus}
+          as={TextField}
+        />
+      );
+    } else if (input.type == "date") {
+      return (
+        <DateInput
+          name={input.name}
+          label={input.label}
+          className="input-box"
+        />
+      );
+    }
+  };
 
-  const deliveryInputs = inputData[1].section.map(input => (
-    <Field
-      key={input.id}
-      name={input.name}
-      type={input.type}
-      variant="outlined"
-      label={input.label}
-      placeholder={input.label}
-      id="outlined-basic"
-      className="input-box"
-      onFocus={handleFocus}
-      as={input.component}
-    />
-  ));
+  const supplierInputs = inputData[0].section.map(input => createInput(input));
 
-  const orderInputs = inputData[2].section.map(input => (
-    <Field
-      key={input.id}
-      name={input.name}
-      type={input.type}
-      variant="outlined"
-      label={input.label}
-      placeholder={input.label}
-      id="outlined-basic"
-      className="input-box"
-      onFocus={handleFocus}
-      as={input.component}
-    />
-  ));
+  const deliveryInputs = inputData[1].section.map(input => createInput(input));
+
+  const orderInputs = inputData[2].section.map(input => createInput(input));
 
   // const supplierStateValues = inputData[0].section.map(value => ({
   //   [value.name]: foundOrder[value.name]
@@ -129,8 +121,75 @@ function SalesOrderDetail(props) {
   ];
 
   return (
-    <div className="data-page">
-      <div className="sales-header">
+    <DataLayout>
+      <div className="templateHeader">
+        <h1 id="title">{foundOrder.orderNumber}</h1>
+      </div>
+      <div className="templateInputs">
+        <CreateForm
+          stateValues={stateValues}
+          containerClass="singleOrderContainer"
+          refData={[foundOrder]}
+        >
+          {inputs}
+        </CreateForm>
+      </div>
+      <div className="add-new-item-container">
+        <CreateForm
+          stateValues={{
+            item: "",
+            amount: "",
+            price: "",
+            subTotal: "",
+            comments: ""
+          }}
+          containerClass="addNewItemsPanel"
+        >
+          <AddNewItem
+            type="search"
+            name="item"
+            id="item-search"
+            label="Item"
+            optionsData={addItemOptionsData}
+          />
+          <AddNewItem
+            type="number"
+            name="amount"
+            id="item-amount"
+            label="Amount"
+          />
+          <AddNewItem
+            type="number"
+            name="price"
+            id="item-price"
+            label="Price"
+          />
+          <AddNewItem
+            type="number"
+            name="subTotal"
+            id="item-subTotal"
+            label="Sub Total"
+          />
+          <AddNewItem
+            type="text"
+            name="comments"
+            id="item-comments"
+            label="Comments"
+          />
+          <AddNewItem type="button" name="add" id="item-add" label="Add" />
+        </CreateForm>
+      </div>
+      <div className="templateTable">
+        <CreateTable heads={heads} data={[foundOrder]} actions />
+      </div>
+    </DataLayout>
+  );
+}
+
+export default SalesOrderDetail;
+
+{
+  /* <div className="sales-header">
         <h1 id="order-title">{foundOrder.orderNumber}</h1>
       </div>
       <CreateForm
@@ -139,9 +198,5 @@ function SalesOrderDetail(props) {
         containerClass="singleOrderContainer"
         refData={[foundOrder]}
       />
-      <CreateTable heads={heads} data={[foundOrder]} actions />
-    </div>
-  );
+      <CreateTable heads={heads} data={[foundOrder]} actions /> */
 }
-
-export default SalesOrderDetail;
