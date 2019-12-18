@@ -1,6 +1,6 @@
 import React from "react";
 import { Field } from "formik";
-import { TextField, Button } from "@material-ui/core";
+import { TextField, Button, InputAdornment } from "@material-ui/core";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import CreateForm from "../Components/CreateForm";
 
@@ -28,7 +28,7 @@ function AddNewItem(props) {
           )}
         />
       );
-    } else if (props.type == "number" || props.type == "text") {
+    } else if (props.type == "text" || props.type == "number") {
       return (
         <Field
           id={props.id}
@@ -41,6 +41,21 @@ function AddNewItem(props) {
           onFocus={handleFocus}
           className="addnewItemElement"
           as={TextField}
+        />
+      );
+    } else if (props.type == "money") {
+      return (
+        <TextField
+          id={props.id}
+          name={props.name}
+          className="addnewItemElement"
+          onFocus={handleFocus}
+          placeholder={props.label}
+          variant="outlined"
+          id="outlined-basic"
+          InputProps={{
+            startAdornment: <InputAdornment position="start">£</InputAdornment>
+          }}
         />
       );
     } else if (props.type == "button") {

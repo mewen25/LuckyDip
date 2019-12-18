@@ -158,14 +158,9 @@ function SalesOrderDetail(props) {
             id="item-amount"
             label="Amount"
           />
+          <AddNewItem type="money" name="price" id="item-price" label="Price" />
           <AddNewItem
-            type="number"
-            name="price"
-            id="item-price"
-            label="Price"
-          />
-          <AddNewItem
-            type="number"
+            type="money"
             name="subTotal"
             id="item-subTotal"
             label="Sub Total"
